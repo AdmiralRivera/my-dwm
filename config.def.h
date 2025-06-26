@@ -19,7 +19,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int showtab            = showtab_auto;
 static const int toptab             = 1;        /* 0 means bottom tab */
 static const int floatbar           = 1;        /* 1 means the bar will float(don't have padding),0 means the bar have padding */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int horizpadbar        = 5;
 static const int vertpadbar         = 11;
 static const int vertpadtab         = 35;
@@ -40,7 +40,7 @@ static const int new_window_attach_on_end = 0; /*  1 means the new window will a
 static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font Mono:style:medium:size=19" };
 
 // theme
-#include "onedark.h"
+#include "themes/onedark.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
@@ -62,13 +62,13 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"", "", "", "", ""};
+static char *tags[] = {"", "", "", "", ""};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
 
 static const Launcher launchers[] = {
     /* command     name to display */
-    { eww,         "" },
+    { eww,         " " },
 };
 
 static const int tagschemes[] = {
@@ -95,6 +95,7 @@ static const Rule rules[] = {
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const int attachbelow = 1;     /* 1 means attach after currently active window */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
@@ -121,7 +122,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
     { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -150,7 +151,7 @@ static const Key keys[] = {
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
     { MODKEY,                           XK_m,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
+    { MODKEY,                           XK_space,  spawn,          SHCMD("st")},
 
     // toggle stuff
     { MODKEY,                           XK_v,       togglebar,      {0} },
