@@ -151,17 +151,17 @@ static const Key keys[] = {
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
     { MODKEY,                           XK_m,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_space,  spawn,          SHCMD("st")},
+    { MODKEY,                           XK_space,   spawn,          SHCMD("st")},
 
     // toggle stuff
     { MODKEY,                           XK_v,       togglebar,      {0} },
     { MODKEY|ControlMask,               XK_b,       togglegaps,     {0} },
-    { MODKEY|ShiftMask,                 XK_space,   togglefloating, {0} },
+    { MODKEY,                           XK_i,       togglefloating, {0} },
     { MODKEY,                           XK_t,       togglefullscr,  {0} },
 
     { MODKEY|ControlMask,               XK_d,       tabmode,        { -1 } },
-    { MODKEY,                           XK_n,       focusstack,     {.i = +1 } },
-    { MODKEY,                           XK_e,       focusstack,     {.i = -1 } },
+    { MODKEY,                           XK_e,       focusstack,     {.i = +1 } },
+    { MODKEY,                           XK_n,       focusstack,     {.i = -1 } },
     { MODKEY,                           XK_u,       incnmaster,     {.i = +1 } },
     { MODKEY,                           XK_h,       incnmaster,     {.i = -1 } },
 
