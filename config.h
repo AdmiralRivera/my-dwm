@@ -156,7 +156,7 @@ static const Key keys[] = {
     // toggle stuff
     { MODKEY,                           XK_v,       togglebar,      {0} },
     { MODKEY|ControlMask,               XK_b,       togglegaps,     {0} },
-    { MODKEY,                           XK_i,       togglefloating, {0} },
+    { MODKEY|ControlMask,               XK_i,       togglefloating, {0} },
     { MODKEY,                           XK_t,       togglefullscr,  {0} },
 
     { MODKEY|ControlMask,               XK_d,       tabmode,        { -1 } },
@@ -212,7 +212,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_l,       setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
     { MODKEY|ControlMask|ShiftMask,     XK_b,       setlayout,      {.v = &layouts[13]} },
-    { MODKEY,                           XK_space,   setlayout,      {0} },
+    { MODKEY,                           XK_i,       setlayout,      {0} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
